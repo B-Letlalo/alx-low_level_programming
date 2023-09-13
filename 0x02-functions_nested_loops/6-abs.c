@@ -9,7 +9,7 @@ int _abs(int i)
 	/*when i is a negative value, turns it to a positive*/
 	if (i < 0)
 	{
-		i = 1 * -1;
+		i = i * -1;
 	}
 	/*when i is positive, it remains as is*/
 	else
