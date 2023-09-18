@@ -6,14 +6,12 @@
  */
 int _strlen(char *s)
 {
-	long int str_length = sizeof(*s);
+	int n;
+	int counter = 0;
 
-	if (str_length < 1)
+	for (; s[n] != '\0'; n++)
 	{
-		return	(0);
+		counter = counter + 1;
 	}
-	else
-	{
-	return	(str_length);
-	}
+	return	(counter);
 }
