@@ -6,7 +6,14 @@
  */
 int _strlen(char *s)
 {
-	int str_length = sizeof(*s);
+	long int str_length = sizeof(*s);
 
+	if (str_length < 1)
+	{
+		return	(0);
+	}
+	else
+	{
 	return	(str_length);
+	}
 }
