@@ -1,38 +1,50 @@
 #include "main.h"
 /**
- * _atoi -  convert a string to an integer
+ * _atoi - converts a string to an integer
+ * Return: the int converted from the string
  * @s: function parameter
- * Return: returns integer converted
  */
 int _atoi(char *s)
 {
-	unsigned int counter = 0, size = 0, oi = 0, pn = 1, n = 1, i;
+	int i, d, n, length, f, number;
 
-	while (*(s + counter) != '\0')
+	i = 0;
+	d = 0;
+	n = 0;
+	length = 0;
+	f = 0;
+	number = 0;
+
+	while (s[length] != '\0')
 	{
-		if (size > 0 && (*(s + counter) < '0' || *(s + counter) > '9'))
+		length++;
+	}
+	while (i < length && f == 0)
+	{
+		if (s[i] == '-')
+		{
+			++d;
+		}
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			number = s[i] - '0';
+		}
+		if (d % 2)
+		{
+			number = -number;
+			n = n * 10 + number;
+			f = 1;
+		}
+		if (s[i + 1] < '0' || s[i + 1] > '9')
 		{
 			break;
+			f = 0;
 		}
-		if (*(s + counter) == '-')
-		{
-			pn *= -1;
-		}
-		if ((*(s + counter) >= '0') && (*(s + counter) <= '9'))
-		{
-			if (size > 0)
-			{
-				n *= 10;
-			}
-			size++;
-		}
-		counter++;
+		i++;
 	}
-	for (i = counter - size; i < counter; i++)
+	if (f == 0)
 	{
-		oi = oi + ((*(s + 1) - 48) * n);
-		n /= 10;
+		return	(0);
+		return	(n);
 	}
-	return	(oi * pn);
 }
-
