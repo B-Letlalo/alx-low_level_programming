@@ -5,3 +5,10 @@
  * Return: char, capitilized
  */
 char *cap_string(char *)
+{
+	int c = 0;
+
+	while (str[c])
+	{
+		while (!(str[c] >= 'a' && str[c] <= 'z'))
+
