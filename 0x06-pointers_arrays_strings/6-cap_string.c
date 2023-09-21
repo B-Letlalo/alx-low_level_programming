@@ -1,14 +1,37 @@
 #include "main.h"
 /**
  * cap_string - capitalizes all words of a string
- * @*: function parameter, char
+ * @n: function parameter, char
  * Return: char, capitilized
  */
-char *cap_string(char *)
+char *cap_string(char *n)
 {
-	int c = 0;
+	int i = 0;
 
-	while (str[c])
+	while (n[i])
 	{
-		while (!(str[c] >= 'a' && str[c] <= 'z'))
-
+		while (!(n[i] >= 'a' && n[i] <= 'z'))
+		{
+			i++;
+			if (n[i - 1] == ' ' ||
+					n[i - 1] == '\t' ||
+					n[i - 1] == '\n' ||
+					n[i - 1] == ',' ||
+					n[i - 1] == ';' ||
+					n[i - 1] == '.' ||
+					n[i - 1] == '!' ||
+					n[i - 1] == '?' ||
+					n[i - 1] == '"' ||
+					n[i - 1] == '(' ||
+					n[i - 1] == ')' ||
+					n[i - 1] == '{' ||
+					n[i - 1] == '}' ||
+					i == 0)
+			{
+				n[i] -= 32;
+				i++;
+			}
+		}
+	}
+	return  (n);
+}
