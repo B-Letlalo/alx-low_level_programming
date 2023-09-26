@@ -6,15 +6,17 @@
  */
 int _abs(int i)
 {
-	/*when i is a negative value, turns it to a positive*/
+	int answer;
+	/*when i is a negative number, make it a positive value*/
 	if (i < 0)
 	{
-		i = i * -1;
+		answer = i * -1;
+		return	(answer);
 	}
-	/*when i is positive, it remains as is*/
+	/*if i is positive, it remains the same*/
 	else
 	{
-		i = i;
+		answer = i;
+		return	(answer);
 	}
-	return	(i);
 }
