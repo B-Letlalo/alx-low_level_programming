@@ -6,15 +6,20 @@
  */
 void print_alphabet_x10(void)
 {
-	int i;
+	/*declaring alphabet letters in an array*/
+	char alphabet[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+		'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w'
+		, 'x', 'y', 'z'};
+	int i = 0;
+	int j = 0;
 
-	for (i = 1; i <= 10; i++)
+	/*prints alphabet in lowercase 10 times*/
+	for (; j < 10; j++)
 	{
-		char c;
-
-		for (c = 'a'; c <= 'z'; c++)
+		while (i < 26)
 		{
-			_putchar(c);
+			_putchar(alphabet[i]);
+			i++;
 		}
 		_putchar('\n');
 	}
