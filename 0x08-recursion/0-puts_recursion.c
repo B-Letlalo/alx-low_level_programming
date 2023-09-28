@@ -5,9 +5,6 @@
  */
 void _puts_recursion(char *s)
 {
-	/*Setting the counter*/
-	int i = 0;
-
 	/*Base case*/
 	if (*s == '\0')
 	{
