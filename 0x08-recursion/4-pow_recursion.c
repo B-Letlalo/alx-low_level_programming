@@ -7,16 +7,17 @@
  */
 int _pow_recursion(int x, int y)
 {
-	int answer = x;
-
 	if (y < 0)
 	{
 		return	(-1);
 	}
+	/* anything raised to the power of 0 is 1*/
+	else if (y == 0)
+	{
+		return	(1);
+	}
 	else
 	{
-		answer *= x;
-		_pow_recursion(x, y - 1);
-		return	(answer);
+		return	(x * _pow_recursion(x, y - 1));
 	}
 }
