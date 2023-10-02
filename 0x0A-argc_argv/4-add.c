@@ -12,12 +12,8 @@ int main(int argc, char *argv[])
 {
 	int i = 1;
 	int answer = 0;
+	int validNumbersFound = 0;
 
-	/*checking if two arguments were passed*/
-	if (argc < 2)
-	{
-		printf("0\n");
-	}
 	/*checking if all arguments are digits*/
 	for (; i < argc; i++)
 	{
@@ -34,7 +30,15 @@ int main(int argc, char *argv[])
 		}
 		/*if they are valid digits*/
 		answer = answer + atoi(argv[i]);
+		validNumbersFound = 1;
 	}
-	printf("%d\n", answer);
+	if (validNumbersFound)
+	{
+		printf("%d\n", answer);
+	}
+	else
+	{
+		printf("0\n");
+	}
 	return	(0);
 }
